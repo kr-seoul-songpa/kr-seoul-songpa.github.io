@@ -291,6 +291,42 @@ body { padding-top: var(--cg-strip-h); }
 .cg-colophon-note { margin: 4px 0 0; color: #9a9aa8; }
 @media (max-width: 640px) { .cg-strip-label { display: none; } }
 @media (prefers-reduced-motion: reduce) { .cg-skip { transition: none; } }
+
+/* ---- Mobile reading view (touch / small screens) ------------------------------------- */
+/* The immersive per-구 template is desktop-only. On touch devices and narrow screens the
+   .cg-read view is shown instead — it uses only safe, high-contrast CSS so text can never
+   go invisible on iOS Safari (no background-clip:text, backdrop-filter, 100vh, :hover-gated
+   reveals, or mix-blend-mode). Fully namespaced + generator-controlled. */
+.cg-read { display: none; }
+@media (hover: none) and (pointer: coarse), (max-width: 768px) {
+  /* Neutralise immersive templates that lock scrolling / lock the viewport on <body>. */
+  html, body { overflow-x: hidden !important; overflow-y: auto !important; height: auto !important;
+    min-height: 0 !important; position: static !important; touch-action: auto !important; background: #ffffff !important; }
+  .cg-immersive { display: none !important; }
+  .cg-read { display: block; }
+}
+.cg-read { max-width: 720px; margin: 0 auto; padding: 20px 18px 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: #17171f; background: #ffffff; line-height: 1.75; -webkit-text-size-adjust: 100%; }
+.cg-read * { max-width: 100%; box-sizing: border-box; }
+.cg-read-head { padding: 8px 0 16px; border-bottom: 3px solid var(--cg-ra, #2d5bff); margin-bottom: 20px; }
+.cg-read-eyebrow { margin: 0 0 4px; color: var(--cg-rd, #333); font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+.cg-read-head h1 { margin: 0; font-size: clamp(30px, 8vw, 40px); line-height: 1.15; color: #14141c; font-weight: 800; }
+.cg-read h2 { font-size: 20px; margin: 30px 0 10px; padding-left: 11px; color: #14141c; font-weight: 700;
+  border-left: 5px solid var(--cg-ra, #2d5bff); }
+.cg-read p { margin: 0 0 12px; font-size: 17px; color: #23232d; }
+.cg-read section { margin: 0; }
+.cg-read ul { margin: 8px 0 0; padding-left: 20px; }
+.cg-read li { margin: 8px 0; font-size: 16px; color: #23232d; }
+.cg-read li strong { color: #111119; font-weight: 700; }
+.cg-read .facts, .cg-read .symbols { list-style: none; padding: 14px 16px; margin: 8px 0 0;
+  background: #f5f6fa; border: 1px solid #e6e8f0; border-radius: 12px; }
+.cg-read .faq details { border: 1px solid #e6e8f0; border-radius: 10px; padding: 10px 14px; margin: 8px 0; background: #fbfbfd; }
+.cg-read .faq summary { cursor: pointer; font-weight: 700; font-size: 16px; color: #14141c; }
+.cg-read .faq details p { margin: 8px 0 2px; color: #44454f; }
+.cg-read a { color: #1a46d8; word-break: break-word; }
+.cg-read .sources { font-size: 14px; color: #55565f; }
+.cg-read .sources a { color: #3a5bd0; }
 </style>
 </head>
 <body>
@@ -299,6 +335,7 @@ body { padding-top: var(--cg-strip-h); }
     <span class="cg-ad">AD</span><span class="cg-strip-label">후원 파트너</span><span class="cg-strip-list"><a class="cg-strip-item" href="https://ikoffices.com" rel="sponsored noopener" target="_blank">일광오피스</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://mobidicsaju.com" rel="sponsored noopener" target="_blank">모비딕 사주</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://www.foodskorea.com/" rel="sponsored noopener" target="_blank">전국팔도 식품도감</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://myflowmakers.com" rel="sponsored noopener" target="_blank">마이플로우메이커스</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://yeonlijispace.com" rel="sponsored noopener" target="_blank">연리지 인테리어</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://yeonliji.io" rel="sponsored noopener" target="_blank">주식회사 연리지</a><span class="cg-strip-dot" aria-hidden="true">·</span><span class="cg-strip-item cg-strip-text">세무·법률 자문</span></span>
   </aside>
   <div id="cg-main" tabindex="-1"></div>
+  <div class="cg-immersive">
 <style>
   :root{
     --sp-azure:#007FFF;
@@ -743,6 +780,137 @@ body { padding-top: var(--cg-strip-h); }
   setTimeout(function(){syncTrack();onScroll();},1400);
 })();
 </script>
+  </div>
+  <main class="cg-read" id="cg-read" role="main" lang="ko" style="--cg-ra:#2bab6b;--cg-ra2:#39c6d0;--cg-rd:#195738">
+    <header class="cg-read-head">
+      <p class="cg-read-eyebrow">서울특별시</p>
+      <h1>송파구</h1>
+    </header>
+    <div class="cg-read-body">
+      <section id="r-intro">
+        <h2>지역 소개</h2>
+        <p>송파구는 한강 남쪽 잠실벌과 백제 고도(古都)의 유산이 어우러진 서울 동남권의 자치구로, 555m 높이의 롯데월드타워와 석촌호수, 올림픽공원이 한데 모여 서울을 대표하는 랜드마크 밀집지로 꼽힙니다. 1988년 서울올림픽의 주 무대였던 이 땅에는 약 2천 년 전 한성백제의 왕성으로 추정되는 풍납토성과 몽촌토성이 그대로 남아, 초고층 마천루와 흙으로 쌓은 토성이 공존하는 독특한 도시 풍경을 만들어 냅니다. 잠실 관광·상업지구, 문정 법조단지, 국내 최대 규모의 가락농수산물종합도매시장이 각각 소비·업무·유통의 축을 이루며 경제적 활력을 뒷받침합니다. 인구 65만 명 안팎으로 서울 자치구 가운데 손꼽히는 규모를 자랑하며, 교육열이 높은 주거지와 대규모 아파트 단지가 넓게 자리합니다. 왕벚꽃이 흐드러지는 석촌호수와 몽촌토성 산책로는 계절마다 시민들의 발길을 끌어들이는 도심 속 휴식처입니다. 옛 송파나루와 송파장의 상업 전통이 오늘날 잠실 롯데월드몰과 가락시장으로 이어지며, 과거와 현재가 한 지역 안에서 두텁게 겹쳐 있는 곳입니다.</p>
+      </section>
+      <section id="r-facts">
+        <h2>주요 통계</h2>
+        <ul class="facts">
+          <li>인구: 약 654,166명 (2023)</li>
+          <li>면적: 33.87 km²</li>
+          <li>신설: 1988년 1월 1일</li>
+        </ul>
+      </section>
+      <section id="r-history">
+        <h2>역사</h2>
+        <p>송파 일대는 한성백제 시기 도읍지였던 것으로 여겨지며, 풍납토성을 하남위례성으로 보는 견해가 유력할 만큼 백제 건국기의 중심 무대였습니다. 몽촌토성과 석촌동 고분군 등 초기 백제 유적이 밀집해 있어, 한강 유역을 놓고 벌어진 삼국의 각축을 증언하는 고고학의 보고로 남아 있습니다. 조선시대에는 한강변 송파나루가 서울과 광주(廣州)를 잇는 요충지로 기능했고, 나루터를 배경으로 열린 송파장은 270여 호의 객주가 활동한 전국 10대 상설시장의 하나로 번성하여 경강상인과 사상도고의 무대가 되었습니다. 지명 &#x27;송파(松坡)&#x27;는 한강변 언덕에 소나무가 빽빽하게 우거져 &#x27;소나무 언덕&#x27;으로 불린 데서 비롯되었다고 전해집니다. 병자호란 때에는 삼전도가 인조가 청 태종에게 항복한 치욕의 현장이 되어, 오늘날 삼전도비가 그 아픈 역사를 전하고 있습니다. 1970년대 잠실·가락지구 구획정리사업으로 저습지와 뽕밭이 신시가지로 탈바꿈했고, 1988년 1월 1일 강동구에서 분리되어 오늘의 송파구가 출범했습니다.</p>
+      </section>
+      <section id="r-geography">
+        <h2>지리·자연환경</h2>
+        <p>송파구는 서울 동남부 한강 이남에 자리하며, 북쪽으로 한강을 사이에 두고 광진구·강동구와 마주하고 서쪽으로는 탄천을 경계로 강남구와 접합니다. 동쪽은 강동구 및 경기도 하남시, 남쪽은 성남시와 이웃하여 서울과 경기 동남권을 잇는 관문 역할을 합니다. 지형은 대체로 평탄한 충적 저지대로, 잠실벌과 가락벌 같은 넓은 들이 펼쳐져 대규모 시가지 조성에 유리했습니다. 한강 본류를 비롯해 탄천, 성내천, 장지천이 구역을 감싸며 흘러 수변 녹지축을 형성하고, 남동쪽에는 남한산으로 이어지는 청량산 자락이 완만한 구릉을 이룹니다. 석촌호수는 본래 한강 본류의 물길이던 송파강이 잠실섬 개발로 육지화되며 남은 자리로, 도심 한복판에 자리한 인공 호수로 널리 알려져 있습니다. 전체 면적은 약 33.87㎢로, 강과 하천, 토성과 호수가 어우러진 물과 흙의 지형이 이 지역의 자연 골격을 이룹니다.</p>
+      </section>
+      <section id="r-characteristics">
+        <h2>지역 특징</h2>
+        <p>송파구는 인구가 약 65만 명에 이르러 서울 25개 자치구 가운데 최대 규모급에 속하며, 대단지 아파트가 밀집한 대표적인 주거·교육 중심지로 꼽힙니다. 잠실 일대는 롯데월드타워와 롯데월드몰, 백화점이 결집한 서울 동남권 최대 상업·관광 거점이며, 국제 규모의 마이스(MICE) 시설과 종합운동장이 인접해 대형 행사와 유동 인구를 흡수합니다. 문정지구에는 서울동부지방법원·검찰청을 중심으로 한 법조단지와 지식산업센터가 들어서 업무·행정 기능이 크게 강화되었습니다. 가락동의 가락농수산물종합도매시장은 국내 최대 규모의 공영 도매시장으로, 전국 농수산물 유통의 핵심 축을 담당합니다. 백제 고도의 역사 자원과 올림픽 유산, 초고층 상업시설이 공존하는 덕에 관광·문화 산업의 잠재력도 큽니다. 이처럼 주거·상업·유통·업무·문화가 고루 발달해, 특정 기능에 치우치지 않은 균형 잡힌 도시 성격을 지닌 것이 송파구의 두드러진 특징입니다.</p>
+      </section>
+      <section id="r-landmarks">
+        <h2>대표 명소</h2>
+        <ul>
+          <li><strong>롯데월드타워</strong> — 지상 123층, 높이 555m의 국내 최고층 초고층 빌딩으로, 서울의 스카이라인을 상징합니다. 118층 서울스카이 전망대는 기네스 세계기록에 오른 유리바닥 전망대로 도심 전경을 한눈에 조망할 수 있습니다.</li>
+          <li><strong>석촌호수</strong> — 잠실 도심 한복판에 자리한 인공 호수로, 롯데월드타워와 롯데월드를 배경으로 한 야경 명소입니다. 봄이면 왕벚꽃길이 장관을 이루어 서울을 대표하는 벚꽃놀이 장소로 사랑받습니다.</li>
+          <li><strong>롯데월드</strong> — 석촌호수 옆에 자리한 실내외 복합 테마파크로, 매직아일랜드와 어드벤처가 결합된 대형 위락시설입니다. 계절과 날씨에 관계없이 즐길 수 있어 서울의 대표적 가족 나들이 명소로 꼽힙니다.</li>
+          <li><strong>올림픽공원</strong> — 1988년 서울올림픽을 기념해 방이동 몽촌토성 일대에 조성된 대규모 도심 공원입니다. 평화의 문, 야외 조각공원, 소마미술관, 88호수 등이 어우러져 체육·문화·역사를 함께 누릴 수 있습니다.</li>
+        </ul>
+      </section>
+      <section id="r-heritage">
+        <h2>문화유산·문화시설</h2>
+        <ul>
+          <li><strong>풍납토성</strong> — 한성백제 시기의 왕성 유적으로 하남위례성으로 비정되는 사적입니다. 흙을 다져 쌓은 대규모 판축 토성으로, 백제 건국기 도읍의 실체를 밝혀 주는 국내 최고 수준의 고고학 유적입니다.</li>
+          <li><strong>몽촌토성</strong> — 올림픽공원 안에 자리한 백제 초기의 토성으로, 자연 구릉을 이용해 쌓은 방어 성곽입니다. 토성 위 산책로에서 백제의 흔적과 도심 경관을 함께 감상할 수 있습니다.</li>
+          <li><strong>한성백제박물관</strong> — 올림픽공원 내에 위치한 서울시립박물관으로, 백제의 탄생부터 한성 도읍기의 문화를 집중 조명합니다. 서울의 선사·고대 문화와 풍납토성·몽촌토성 발굴 성과를 전시로 만나볼 수 있습니다.</li>
+          <li><strong>석촌동 고분군</strong> — 백제 한성기 지배층의 무덤으로 알려진 사적으로, 돌을 쌓아 만든 대형 적석총이 특징입니다. 고구려식 무덤 양식과의 연관성이 논의되는 백제 초기 왕실 묘역입니다.</li>
+          <li><strong>삼전도비</strong> — 병자호란 때 인조가 청 태종에게 항복한 사실을 기록한 비석으로, 정식 명칭은 대청황제공덕비입니다. 한·몽·만주 세 문자가 새겨진 아픈 역사의 증거물입니다.</li>
+          <li><strong>서울놀이마당</strong> — 석촌호수 서호 옆에 자리한 전통 공연 마당으로, 사물놀이·판소리·탈춤 등 우리 전통예술 무대가 펼쳐집니다. 시민이 무료로 전통문화를 접할 수 있는 야외 공연 공간입니다.</li>
+        </ul>
+      </section>
+      <section id="r-nature">
+        <h2>자연·휴식</h2>
+        <ul>
+          <li><strong>올림픽공원 몽촌토성 산책로</strong> — 몽촌토성의 완만한 흙길을 따라 걷는 인기 산책 코스로, &#x27;나홀로나무&#x27;와 들꽃마루가 사진 명소로 유명합니다. 도심 속에서 백제 토성과 초록 언덕을 함께 즐길 수 있습니다.</li>
+          <li><strong>석촌호수 산책로</strong> — 동호와 서호를 잇는 호반 둘레길로, 약 2.5km의 평탄한 산책·조깅 코스입니다. 봄 벚꽃과 가을 단풍, 롯데월드타워 야경이 어우러지는 도심 수변 휴식처입니다.</li>
+          <li><strong>탄천 산책로</strong> — 송파구 서쪽 경계를 흐르는 탄천을 따라 조성된 하천 산책·자전거길입니다. 강남과 성남 방면으로 이어지는 수변 녹지축으로 시민들의 운동 공간이 됩니다.</li>
+          <li><strong>성내천</strong> — 구를 가로질러 한강으로 흘러드는 도심 하천으로, 복원을 거쳐 물길과 산책로가 정비되었습니다. 주거지 가까이에서 물소리를 들으며 걸을 수 있는 생활 밀착형 휴식 공간입니다.</li>
+          <li><strong>한강공원 잠실지구</strong> — 잠실 방면 한강변에 조성된 둔치 공원으로, 자전거길과 수영장, 넓은 잔디밭을 갖추고 있습니다. 강바람을 맞으며 여가를 즐기는 강북·강남 접근이 편리한 수변 명소입니다.</li>
+        </ul>
+      </section>
+      <section id="r-transport">
+        <h2>교통</h2>
+        <p>송파구는 도시철도가 촘촘히 지나는 서울 동남권의 교통 요지로, 지하철 2호선이 잠실·잠실새내·종합운동장역을 거치며 강남과 도심을 빠르게 잇습니다. 8호선은 몽촌토성·잠실·석촌·송파·가락시장·문정·장지역을 남북으로 관통하고, 9호선은 종합운동장·삼전·석촌고분·석촌·송파나루·한성백제역을 지나 강서·여의도 방면과 연결됩니다. 3호선은 가락시장역과 오금역을 지나 5호선 지선과 함께 구 남부의 접근성을 높입니다. 여러 노선이 겹치는 잠실역과 석촌역·가락시장역은 대표적인 환승 거점으로 유동 인구가 매우 많습니다. 도로 교통 측면에서는 송파대로와 올림픽로, 양재대로, 백제고분로가 주요 간선축을 이루고, 수도권제1순환고속도로가 구 외곽을 지나 경기 동남권과 이어집니다. 잠실대교·올림픽대교 등으로 한강을 건너 강북과 연결되어, 지하철과 도로 모두 서울과 수도권을 폭넓게 잇는 결절점 역할을 합니다.</p>
+      </section>
+      <section id="r-symbols">
+        <h2>지역 상징</h2>
+        <ul class="symbols">
+          <li>구화(꽃): 왕벚꽃</li>
+          <li>구목(나무): 소나무</li>
+          <li>구조(새): 학</li>
+        </ul>
+      </section>
+      <section id="r-faq">
+        <h2>자주 묻는 질문</h2>
+        <div class="faq">
+          <details>
+            <summary>송파구의 대표 랜드마크는 무엇인가요?</summary>
+            <p>높이 555m의 롯데월드타워가 송파구를 상징하는 최고층 랜드마크이며, 인근의 석촌호수·롯데월드·올림픽공원과 함께 서울 동남권을 대표하는 명소로 꼽힙니다.</p>
+          </details>
+          <details>
+            <summary>송파구는 백제와 어떤 관련이 있나요?</summary>
+            <p>송파구는 한성백제의 도읍지로 여겨지는 풍납토성과 몽촌토성, 석촌동 고분군 등 초기 백제 유적이 밀집한 지역으로, 백제 건국기 역사를 간직한 고고학의 보고입니다.</p>
+          </details>
+          <details>
+            <summary>&#x27;송파&#x27;라는 지명은 어디에서 유래했나요?</summary>
+            <p>옛 한강변 언덕에 소나무가 빽빽하게 우거져 &#x27;소나무 언덕(松坡)&#x27;으로 불린 데서 유래했다고 전해지며, 조선시대 한강 나루터인 송파나루와 큰 시장 송파장이 있던 곳입니다.</p>
+          </details>
+          <details>
+            <summary>송파구청은 어디에 있나요?</summary>
+            <p>송파구청은 서울특별시 송파구 올림픽로 326에 위치하며, 잠실 일대와 가까워 대중교통으로 접근하기 편리합니다.</p>
+          </details>
+          <details>
+            <summary>송파구를 지나는 지하철 노선은 무엇인가요?</summary>
+            <p>지하철 2호선, 3호선, 5호선 지선, 8호선, 9호선이 송파구를 지나며, 잠실역과 석촌역·가락시장역이 대표적인 환승역입니다.</p>
+          </details>
+          <details>
+            <summary>석촌호수에서 벚꽃은 언제 볼 수 있나요?</summary>
+            <p>석촌호수 왕벚꽃은 보통 4월 초에 절정을 이루며, 롯데월드타워를 배경으로 한 벚꽃길이 서울의 대표적인 봄철 명소로 사랑받습니다.</p>
+          </details>
+          <details>
+            <summary>가락농수산물시장은 어떤 곳인가요?</summary>
+            <p>가락동에 위치한 가락농수산물종합도매시장은 국내 최대 규모의 공영 도매시장으로, 전국 농수산물 유통의 핵심 거점 역할을 합니다.</p>
+          </details>
+        </div>
+      </section>
+      <section id="r-links">
+        <h2>공식 링크</h2>
+        <ul>
+          <li><a href="https://www.songpa.go.kr/" rel="noopener">송파구청 공식 홈페이지</a></li>
+          <li><a href="https://www.songpa.go.kr/culture/" rel="noopener">송파구 문화관광</a></li>
+        </ul>
+      </section>
+      <section id="r-github">
+        <h2>GitHub</h2>
+        <ul>
+          <li><a href="https://github.com/kr-seoul-songpa" rel="noopener">GitHub 조직: kr-seoul-songpa</a></li>
+          <li><a href="https://github.com/kr-seoul-songpa/kr-seoul-songpa.github.io" rel="noopener">이 사이트 저장소</a></li>
+        </ul>
+      </section>
+      <section id="r-sources">
+        <h2>출처</h2>
+        <ul class="sources">
+          <li><a href="https://ko.wikipedia.org/wiki/%EC%86%A1%ED%8C%8C%EA%B5%AC" rel="noopener">송파구 - 위키백과, 우리 모두의 백과사전</a> (조회 2026-07-08)</li>
+          <li><a href="https://www.songpa.go.kr/" rel="noopener">송파구청 공식 홈페이지</a> (조회 2026-07-08)</li>
+          <li><a href="https://encykorea.aks.ac.kr/Article/E0031110" rel="noopener">송파나루(松坡나루) - 한국민족문화대백과사전</a> (조회 2026-07-08)</li>
+          <li><a href="https://encykorea.aks.ac.kr/Article/E0067006" rel="noopener">서울특별시 송파구 - 한국민족문화대백과사전</a> (조회 2026-07-08)</li>
+        </ul>
+      </section>
+    </div>
+  </main>
   <aside class="cg-sponsors" aria-label="후원 파트너 상세">
     <p class="cg-spon-head"><span class="cg-ad">AD</span> 후원 파트너 <small>이 링크는 광고이며 편집상의 추천이 아닙니다 (rel=&quot;sponsored&quot;).</small></p>
     <ul class="cg-spon-grid">
